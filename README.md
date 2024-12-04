@@ -72,7 +72,7 @@ Untuk menghubungkan jaringan **Eridu** ke internet tanpa menggunakan MASQUERADE,
 1. **Menambahkan IP routing statis di router**:
    Routing statis ditambahkan pada **router** agar paket yang menuju internet dapat diteruskan ke gateway eksternal.
    ```bash
-   sudo ip route add default via 192.168.1.1  # Contoh rute default
+   sudo ip route add default via 192.168.1.1  # Contoh rute
    ```
 2. **Mengonfigurasi iptables** untuk NAT tanpa menggunakan MASQUERADE:
    Konfigurasi **SNAT** digunakan untuk mengganti alamat IP sumber paket yang keluar, namun tetap menghindari penggunaan MASQUERADE.
@@ -103,14 +103,14 @@ Akses ke **HDD** hanya diizinkan untuk **Fairy**. Dengan menggunakan **nc (netca
    Iptables dikonfigurasi untuk menerima koneksi hanya dari **Fairy** dan menolak koneksi lainnya.
    ```bash
    sudo iptables -A INPUT -p tcp -s 192.168.1.100 --dport 80 -j ACCEPT  # IP Fairy
-   sudo iptables -A INPUT -p tcp --dport 80 -j DROP  # Blokir akses lainnya
+   sudo iptables -A INPUT -p tcp --dport 80 -j DROP  # Blokir
    ```
 
 2. **Verifikasi dengan menggunakan nc**:
    **Netcat** digunakan untuk memastikan bahwa hanya **Fairy** yang bisa mengakses **HDD**.
    ```bash
    nc -v 192.168.2.100 80  # Dari Fairy
-   nc -v 192.168.2.100 80  # Dari perangkat lain (seharusnya gagal)
+   nc -v 192.168.2.100 80  # Dari perangkat lain 
    ```
 
 #### **4. Mengonfigurasi Akses ke Hollow Zero Berdasarkan Hari dan Faksi**

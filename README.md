@@ -1,4 +1,69 @@
 # Jarkom-Modul-5-IT42-2024
+
+
+### Daftar Kebutuhan Host
+Berikut kebutuhan IP untuk setiap subnet, termasuk cadangan 2 IP (untuk Network dan Broadcast):
+- **Jane**: 200 host → 256 IP (Mask /24)
+- **Ellen**: 100 host → 128 IP (Mask /25)
+- **Caesar**: 50 host → 64 IP (Mask /26)
+- **Policeboo**: 30 host → 32 IP (Mask /27)
+- **Lycaon**: 20 host → 32 IP (Mask /27)
+- **Burnice**: 5 host → 8 IP (Mask /29)
+
+---
+
+### Perhitungan Alokasi IP
+#### 1. Subnet **Jane** (200 host)
+- Jumlah IP: 256
+- Subnet Mask: **/24**
+- Range: **192.168.0.0 - 192.168.0.255**
+- Broadcast: **192.168.0.255**
+
+#### 2. Subnet **Ellen** (100 host)
+- Jumlah IP: 128
+- Subnet Mask: **/25**
+- Range: **192.168.1.0 - 192.168.1.127**
+- Broadcast: **192.168.1.127**
+
+#### 3. Subnet **Caesar** (50 host)
+- Jumlah IP: 64
+- Subnet Mask: **/26**
+- Range: **192.168.1.128 - 192.168.1.191**
+- Broadcast: **192.168.1.191**
+
+#### 4. Subnet **Policeboo** (30 host)
+- Jumlah IP: 32
+- Subnet Mask: **/27**
+- Range: **192.168.1.192 - 192.168.1.223**
+- Broadcast: **192.168.1.223**
+
+#### 5. Subnet **Lycaon** (20 host)
+- Jumlah IP: 32
+- Subnet Mask: **/27**
+- Range: **192.168.1.224 - 192.168.1.255**
+- Broadcast: **192.168.1.255**
+
+#### 6. Subnet **Burnice** (5 host)
+- Jumlah IP: 8
+- Subnet Mask: **/29**
+- Range: **192.168.2.0 - 192.168.2.7**
+- Broadcast: **192.168.2.7**
+
+---
+
+### Rekapitulasi
+| **Subnet**   | **Host** | **IP Range**             | **Broadcast**       | **Subnet Mask** |
+|--------------|----------|--------------------------|---------------------|-----------------|
+| Jane         | 200      | 192.168.0.0 - 192.168.0.255 | 192.168.0.255     | /24             |
+| Ellen        | 100      | 192.168.1.0 - 192.168.1.127 | 192.168.1.127     | /25             |
+| Caesar       | 50       | 192.168.1.128 - 192.168.1.191 | 192.168.1.191     | /26             |
+| Policeboo    | 30       | 192.168.1.192 - 192.168.1.223 | 192.168.1.223     | /27             |
+| Lycaon       | 20       | 192.168.1.224 - 192.168.1.255 | 192.168.1.255     | /27             |
+| Burnice      | 5        | 192.168.2.0 - 192.168.2.7    | 192.168.2.7       | /29             |
+
+---
+
+
 ## **Misi 2**
 #### **1. Mengonfigurasi Routing Agar Jaringan Eridu Terhubung ke Internet**
 Untuk menghubungkan jaringan **Eridu** ke internet tanpa menggunakan MASQUERADE, konfigurasi routing dilakukan dengan menggunakan **iptables** untuk NAT (Network Address Translation) dan routing statis.

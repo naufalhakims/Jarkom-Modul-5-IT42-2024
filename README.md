@@ -1,5 +1,5 @@
 # Jarkom-Modul-5-IT42-2024
-
+## **Misi 2**
 #### **1. Mengonfigurasi Routing Agar Jaringan Eridu Terhubung ke Internet**
 Untuk menghubungkan jaringan **Eridu** ke internet tanpa menggunakan MASQUERADE, konfigurasi routing dilakukan dengan menggunakan **iptables** untuk NAT (Network Address Translation) dan routing statis.
 
